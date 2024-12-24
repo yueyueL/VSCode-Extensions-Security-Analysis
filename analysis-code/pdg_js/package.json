@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "escodegen": "^2.1.0",
+    "espree": "^9.6.1"
+  }
+}
