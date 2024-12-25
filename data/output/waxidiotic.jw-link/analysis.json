@@ -1,0 +1,175 @@
+{
+    "extension": "/home/yueyue/24new/VSCode-Extensions-Security-Analysis/data/code/waxidiotic.jw-link",
+    "benchmarks": {
+        "crashes": [],
+        "Asix: got AST": 0.07827439624816179,
+        "Asix: AST": 0.009758064523339272,
+        "Asix: CFG": 0.0019994163885712624,
+        "Asix: PDG": 0.1285170577466488,
+        "vsix: dangers": 0.004144157283008099,
+        "vsix: got sources": 0.0004465365782380104
+    },
+    "tool_version": "v3",
+    "vsix": {
+        "Commands": [
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(jwLink.configure, <pdg_js.node.Identifier object at 0x7fc1eb8a26d0>)",
+                "line": "113 - 113",
+                "sink-param1": "jwLink.configure",
+                "sink-param2": "<pdg_js.node.Identifier object at 0x7fc1eb8a26d0>"
+            },
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(jwLink.refresh, <pdg_js.node.Identifier object at 0x7fc1eb857eb0>)",
+                "line": "114 - 114",
+                "sink-param1": "jwLink.refresh",
+                "sink-param2": "<pdg_js.node.Identifier object at 0x7fc1eb857eb0>"
+            },
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(jwLink.singleLine, <pdg_js.node.Identifier object at 0x7fc1eb875400>)",
+                "line": "115 - 115",
+                "sink-param1": "jwLink.singleLine",
+                "sink-param2": "<pdg_js.node.Identifier object at 0x7fc1eb875400>"
+            },
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(jwLink.player, <pdg_js.node.Identifier object at 0x7fc1eb875730>)",
+                "line": "116 - 116",
+                "sink-param1": "jwLink.player",
+                "sink-param2": "<pdg_js.node.Identifier object at 0x7fc1eb875730>"
+            },
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(jwLink.content, <pdg_js.node.Identifier object at 0x7fc1eb875fd0>)",
+                "line": "117 - 117",
+                "sink-param1": "jwLink.content",
+                "sink-param2": "<pdg_js.node.Identifier object at 0x7fc1eb875fd0>"
+            },
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(jwLink.moreOptions, <pdg_js.node.FunctionExpression object at 0x7fc1eb427c40>)",
+                "line": "118 - 118",
+                "sink-param1": "jwLink.moreOptions",
+                "sink-param2": "() => { views.moreOptions(context) }"
+            }
+        ],
+        "WorkspaceConfiguration": [],
+        "InputBox": [
+            {
+                "danger": "showInputBox",
+                "value": "require(vscode).window.showInputBox(<pdg_js.node.ValueExpr object at 0x7fc1eb8a2eb0>)",
+                "line": "24 - 28",
+                "sink-param1": "{\n prompt: 'Enter the API key for the property you would like to configure',\n placeHolder: 'API key',\n ignoreFocusOut: true,\n }",
+                "code": "            vscode.window.showInputBox({\n                prompt: 'Enter the API key for the property you would like to configure',\n                placeHolder: 'API key',\n                ignoreFocusOut: true,\n            }).then((key) => {\n"
+            },
+            {
+                "danger": "showInputBox",
+                "value": "require(vscode).window.showInputBox(<pdg_js.node.ValueExpr object at 0x7fc1eb83b3a0>)",
+                "line": "30 - 34",
+                "sink-param1": "{\n prompt: `Enter the API secret for ${key}`,\n placeholder: 'API secret',\n ignoreFocusOut: true,\n }",
+                "code": "                vscode.window.showInputBox({\n                    prompt: `Enter the API secret for ${key}`,\n                    placeholder: 'API secret',\n                    ignoreFocusOut: true,\n                }).then((secret) => {\n"
+            }
+        ],
+        "GlobalState": [
+            {
+                "danger": "globalState.get",
+                "value": "context.globalState.get(jwApiKey)",
+                "line": "21 - 21",
+                "sink-param1": "jwApiKey"
+            },
+            {
+                "danger": "globalState.get",
+                "value": "context.globalState.get(jwApiSecret)",
+                "line": "22 - 22",
+                "sink-param1": "jwApiSecret"
+            },
+            {
+                "danger": "globalState.update",
+                "value": "context.globalState.update(jwApiKey, key)",
+                "line": "39 - 39",
+                "sink-param1": "jwApiKey",
+                "sink-param2": "key"
+            },
+            {
+                "danger": "globalState.update",
+                "value": "context.globalState.update(jwApiSecret, secret)",
+                "line": "40 - 40",
+                "sink-param1": "jwApiSecret",
+                "sink-param2": "secret"
+            },
+            {
+                "danger": "globalState.get",
+                "value": "extensionContext.globalState.get(jwApiKey)",
+                "line": "143 - 143",
+                "sink-param1": "jwApiKey"
+            },
+            {
+                "danger": "globalState.get",
+                "value": "extensionContext.globalState.get(jwApiSecret)",
+                "line": "144 - 144",
+                "sink-param1": "jwApiSecret"
+            },
+            {
+                "danger": "globalState.get",
+                "value": "extensionContext.globalState.get(jwApiKey)",
+                "line": "186 - 186",
+                "sink-param1": "jwApiKey"
+            },
+            {
+                "danger": "globalState.get",
+                "value": "extensionContext.globalState.get(jwApiSecret)",
+                "line": "187 - 187",
+                "sink-param1": "jwApiSecret"
+            },
+            {
+                "danger": "globalState.update",
+                "value": "extensionContext.globalState.update(jwApiKey, None)",
+                "line": "267 - 267",
+                "sink-param1": "jwApiKey",
+                "sink-param2": null
+            },
+            {
+                "danger": "globalState.update",
+                "value": "extensionContext.globalState.update(jwApiSecret, None)",
+                "line": "268 - 268",
+                "sink-param1": "jwApiSecret",
+                "sink-param2": null
+            }
+        ],
+        "RequestedConfiguration": {},
+        "RequestedCommands": [
+            {
+                "command": "jwLink.configure",
+                "title": "Update API Credentials",
+                "category": "JW Link"
+            },
+            {
+                "command": "jwLink.refresh",
+                "title": "Refresh Content and Players",
+                "category": "JW Link"
+            },
+            {
+                "command": "jwLink.singleLine",
+                "title": "Add Single-Line Embed",
+                "category": "JW Link"
+            },
+            {
+                "command": "jwLink.player",
+                "title": "Add Cloud-Hosted Player Library",
+                "category": "JW Link"
+            },
+            {
+                "command": "jwLink.content",
+                "title": "Add Content URL (HLS)",
+                "category": "JW Link"
+            },
+            {
+                "command": "jwLink.moreOptions",
+                "title": "More Options...",
+                "category": "JW Link"
+            }
+        ]
+    }
+}

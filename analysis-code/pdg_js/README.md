@@ -11,7 +11,7 @@ install python3 # (tested with 3.7.3 and 3.7.4)
 install nodejs
 install npm
 cd src/pdg_js
-npm install esprima # (tested with 4.0.1)
+npm install espree # 
 npm install escodegen # (tested with 1.14.2 and 2.0.0)
 cd ..
 ```

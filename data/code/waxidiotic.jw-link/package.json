@@ -1,0 +1,84 @@
+{
+  "name": "jw-link",
+  "displayName": "JW Link",
+  "description": "Interface with hosted players and content via JW Player Management API",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.35.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "jwplayer-mark.png",
+  "author": {
+    "name": "Alex Bussey",
+    "email": "abussey@jwplayer.com"
+  },
+  "publisher": "waxidiotic",
+  "bugs": {
+    "url": "https://github.com/waxidiotic/jw-link/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/waxidiotic/jw-link.git"
+  },
+  "activationEvents": [
+    "onCommand:jwLink.configure",
+    "onCommand:jwLink.refresh",
+    "onCommand:jwLink.singleLine",
+    "onCommand:jwLink.player",
+    "onCommand:jwLink.content",
+    "onCommand:jwLink.moreOptions"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "jwLink.configure",
+        "title": "Update API Credentials",
+        "category": "JW Link"
+      },
+      {
+        "command": "jwLink.refresh",
+        "title": "Refresh Content and Players",
+        "category": "JW Link"
+      },
+      {
+        "command": "jwLink.singleLine",
+        "title": "Add Single-Line Embed",
+        "category": "JW Link"
+      },
+      {
+        "command": "jwLink.player",
+        "title": "Add Cloud-Hosted Player Library",
+        "category": "JW Link"
+      },
+      {
+        "command": "jwLink.content",
+        "title": "Add Content URL (HLS)",
+        "category": "JW Link"
+      },
+      {
+        "command": "jwLink.moreOptions",
+        "title": "More Options...",
+        "category": "JW Link"
+      }
+    ]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^10.12.21",
+    "eslint": "^5.13.0",
+    "typescript": "^3.3.1",
+    "vscode": "^1.1.28"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "fs-extra": "^8.0.1",
+    "jwplayer-api": "^1.5.0"
+  }
+}

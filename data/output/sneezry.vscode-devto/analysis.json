@@ -1,0 +1,237 @@
+{
+    "extension": "/home/yueyue/24new/VSCode-Extensions-Security-Analysis/data/code/sneezry.vscode-devto",
+    "benchmarks": {
+        "crashes": [],
+        "Asix: got AST": 0.14995847083628178,
+        "Asix: AST": 0.06459398660808802,
+        "Asix: CFG": 0.009181579574942589,
+        "Asix: PDG": 0.14212189428508282,
+        "vsix: dangers": 0.01402750052511692,
+        "vsix: got sources": 0.0007283128798007965
+    },
+    "tool_version": "v3",
+    "vsix": {
+        "Commands": [
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(devto.signin, <pdg_js.node.FunctionExpression object at 0x7f4bc1494eb0>)",
+                "line": "810 - 815",
+                "sink-param1": "devto.signin",
+                "sink-param2": ", () => __awaiter(this, void 0, void 0, function* () {\r\n yield apiKeyManager.updateApiKeyCommand(() => {\r\n devArticleVirtualFSProvider.clearCache();\r\n treeDataProvider.refresh();\r\n });\r\n "
+            },
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(devto.uploadImage, <pdg_js.node.FunctionExpression object at 0x7f4bc14af580>)",
+                "line": "815 - 817",
+                "sink-param1": "devto.uploadImage",
+                "sink-param2": ", () => __awaiter(this, void 0, void 0, function* () {\r\n yield imageUploadManager.uploadImage();\r\n "
+            },
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(devto.updateGitHubPersonalToken, <pdg_js.node.FunctionExpression object at 0x7f4bc14af9d0>)",
+                "line": "817 - 820",
+                "sink-param1": "devto.updateGitHubPersonalToken",
+                "sink-param2": ", () => __awaiter(this, void 0, void 0, function* () {\r\n yield imageUploadManager.updateGitHubPersonalToken();\r\n vscode.window.showInformationMessage('Your GitHub personal access token has been updated.');\r\n "
+            },
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(devto.removeGitHubPersonalToken, <pdg_js.node.FunctionExpression object at 0x7f4bc14affa0>)",
+                "line": "820 - 823",
+                "sink-param1": "devto.removeGitHubPersonalToken",
+                "sink-param2": ", () => __awaiter(this, void 0, void 0, function* () {\r\n yield imageUploadManager.removeGitHubPersonalToken();\r\n vscode.window.showInformationMessage('Your GitHub personal access token has been removed.');\r\n "
+            },
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(devto.view, <pdg_js.node.FunctionExpression object at 0x7f4bc144a5b0>)",
+                "line": "823 - 834",
+                "sink-param1": "devto.view",
+                "sink-param2": ", (fileName) => __awaiter(this, void 0, void 0, function* () {\r\n const uri = ResourceUriBuilder_1.resourceUriBuilder({\r\n resourcePath: fileName,\r\n raw: true,\r\n });\r\n const decoder = new util_1.TextDecoder();\r\n const articleRaw = decoder.decode(yield vscode.workspace.fs.readFile(uri));\r\n const article = JSON.parse(articleRaw);\r\n if (article.url) {\r\n yield vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(article.url));\r\n }\r\n "
+            },
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(devto.editOnline, <pdg_js.node.FunctionExpression object at 0x7f4bc1464640>)",
+                "line": "834 - 839",
+                "sink-param1": "devto.editOnline",
+                "sink-param2": ", (fileName) => __awaiter(this, void 0, void 0, function* () {\r\n const article = yield getArticleByFileName(fileName);\r\n if (article.url) {\r\n yield vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(article.url + '/edit'));\r\n }\r\n "
+            },
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(devto.publish, <pdg_js.node.FunctionExpression object at 0x7f4bc1464fa0>)",
+                "line": "839 - 848",
+                "sink-param1": "devto.publish",
+                "sink-param2": ", (fileName) => __awaiter(this, void 0, void 0, function* () {\r\n const article = yield getArticleByFileName(fileName);\r\n yield vscode.window.withProgress({\r\n title: `Publishing ${article.title}`,\r\n location: vscode.ProgressLocation.Notification,\r\n }, () => __awaiter(this, void 0, void 0, function* () {\r\n yield Edit_1.Edit.publish(article);\r\n treeDataProvider.refresh();\r\n }));\r\n "
+            },
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(devto.delete, <pdg_js.node.FunctionExpression object at 0x7f4bc1480d90>)",
+                "line": "848 - 853",
+                "sink-param1": "devto.delete",
+                "sink-param2": ", (fileName) => __awaiter(this, void 0, void 0, function* () {\r\n const article = yield getArticleByFileName(fileName);\r\n if (article.url) {\r\n yield vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(article.url + '/delete_confirm'));\r\n }\r\n "
+            },
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(devto.key, <pdg_js.node.FunctionExpression object at 0x7f4bc141b730>)",
+                "line": "853 - 855",
+                "sink-param1": "devto.key",
+                "sink-param2": ", () => __awaiter(this, void 0, void 0, function* () {\r\n yield vscode.commands.executeCommand('vscode.open', vscode.Uri.parse('https://dev.to/settings/account'));\r\n "
+            },
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(devto.refresh, <pdg_js.node.FunctionExpression object at 0x7f4bc141bd60>)",
+                "line": "855 - 861",
+                "sink-param1": "devto.refresh",
+                "sink-param2": ", () => {\r\n if (!api.hasApiKey) {\r\n return;\r\n }\r\n devArticleVirtualFSProvider.clearCache();\r\n treeDataProvider.refresh();\r\n "
+            },
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(devto.signout, <pdg_js.node.FunctionExpression object at 0x7f4bc1435280>)",
+                "line": "861 - 863",
+                "sink-param1": "devto.signout",
+                "sink-param2": ", () => __awaiter(this, void 0, void 0, function* () {\r\n yield apiKeyManager.removeApiKeyCommand(treeDataProvider.refresh.bind(treeDataProvider));\r\n "
+            },
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(devto.create, require(./content/Edit).Edit.createNewArticle)",
+                "line": "863 - 863",
+                "sink-param1": "devto.create",
+                "sink-param2": "require(./content/Edit).Edit.createNewArticle"
+            },
+            {
+                "danger": "commands.registerCommand",
+                "value": "require(vscode).commands.registerCommand(devto.edit, require(./content/Edit).Edit.showMarkdown)",
+                "line": "863 - 863",
+                "sink-param1": "devto.edit",
+                "sink-param2": "require(./content/Edit).Edit.showMarkdown"
+            }
+        ],
+        "WorkspaceConfiguration": [],
+        "InputBox": [
+            {
+                "danger": "showInputBox",
+                "value": "require(vscode).window.showInputBox(<pdg_js.node.ValueExpr object at 0x7f4bc19c2100>)",
+                "line": "39 - 43",
+                "sink-param1": "{\r\n value: apiKey,\r\n prompt: 'DEV Community API key',\r\n ignoreFocusOut: true,\r\n }",
+                "code": "            const newApiKey = yield vscode.window.showInputBox({\n                value: apiKey,\n                prompt: 'DEV Community API key',\n                ignoreFocusOut: true,\n            });\n"
+            },
+            {
+                "danger": "showInputBox",
+                "value": "require(vscode).window.showInputBox(<pdg_js.node.ValueExpr object at 0x7f4bc19b1400>)",
+                "line": "96 - 100",
+                "sink-param1": "{\r\n value: personalToken,\r\n prompt: 'GitHub personal access token',\r\n ignoreFocusOut: true,\r\n }",
+                "code": "            const newPersonalToken = yield vscode.window.showInputBox({\n                value: personalToken,\n                prompt: 'GitHub personal access token',\n                ignoreFocusOut: true,\n            });\n"
+            }
+        ],
+        "GlobalState": [
+            {
+                "danger": "globalState.update",
+                "value": "this._context.globalState.update(devto:apiKey, apiKey)",
+                "line": "20 - 20",
+                "sink-param1": "devto:apiKey",
+                "sink-param2": "apiKey"
+            },
+            {
+                "danger": "globalState.get",
+                "value": "this._context.globalState.get(devto:apiKey)",
+                "line": "26 - 26",
+                "sink-param1": "devto:apiKey"
+            },
+            {
+                "danger": "globalState.get",
+                "value": "this._context.globalState.get(devto:gitHubToken)",
+                "line": "90 - 90",
+                "sink-param1": "devto:gitHubToken"
+            },
+            {
+                "danger": "globalState.update",
+                "value": "this._context.globalState.update(devto:gitHubToken, newPersonalToken)",
+                "line": "104 - 104",
+                "sink-param1": "devto:gitHubToken",
+                "sink-param2": "newPersonalToken"
+            },
+            {
+                "danger": "globalState.update",
+                "value": "this._context.globalState.update(devto:gitHubToken, )",
+                "line": "110 - 110",
+                "sink-param1": "devto:gitHubToken",
+                "sink-param2": ""
+            }
+        ],
+        "RequestedConfiguration": {},
+        "RequestedCommands": [
+            {
+                "command": "devto.edit",
+                "title": "Edit post"
+            },
+            {
+                "command": "devto.delete",
+                "title": "Delete post"
+            },
+            {
+                "command": "devto.key",
+                "title": "Create API key",
+                "icon": {
+                    "dark": "resources/dark/key.svg",
+                    "light": "resources/light/key.svg"
+                }
+            },
+            {
+                "command": "devto.view",
+                "title": "View online"
+            },
+            {
+                "command": "devto.editOnline",
+                "title": "Edit online"
+            },
+            {
+                "command": "devto.publish",
+                "title": "Publish post"
+            },
+            {
+                "command": "devto.create",
+                "title": "Create a new post",
+                "icon": {
+                    "dark": "resources/dark/create.svg",
+                    "light": "resources/light/create.svg"
+                }
+            },
+            {
+                "command": "devto.refresh",
+                "title": "Refresh post list",
+                "icon": {
+                    "dark": "resources/dark/refresh.svg",
+                    "light": "resources/light/refresh.svg"
+                }
+            },
+            {
+                "command": "devto.signin",
+                "title": "Sign in",
+                "icon": {
+                    "dark": "resources/dark/signin.svg",
+                    "light": "resources/light/signin.svg"
+                }
+            },
+            {
+                "command": "devto.signout",
+                "title": "Sign out",
+                "icon": {
+                    "dark": "resources/dark/signout.svg",
+                    "light": "resources/light/signout.svg"
+                }
+            },
+            {
+                "command": "devto.uploadImage",
+                "title": "Upload image"
+            },
+            {
+                "command": "devto.updateGitHubPersonalToken",
+                "title": "Update GitHub personal access token",
+                "category": "DEV Community"
+            },
+            {
+                "command": "devto.removeGitHubPersonalToken",
+                "title": "Remove GitHub personal access token",
+                "category": "DEV Community"
+            }
+        ]
+    }
+}
